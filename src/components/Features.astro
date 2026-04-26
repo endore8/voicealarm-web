@@ -1,0 +1,83 @@
+---
+import {
+	Mic,
+	Sunrise,
+	CalendarClock,
+	Users,
+	Sparkles,
+	ShieldCheck,
+} from "@lucide/astro";
+
+const features = [
+	{
+		icon: Mic,
+		title: "Your voice, your wake-up",
+		description:
+			"Record personal messages or pull from your library so every morning sounds like you.",
+	},
+	{
+		icon: Sunrise,
+		title: "Gentle wake curve",
+		description:
+			"Volume rises naturally over time so you slide into the day instead of getting jolted awake.",
+	},
+	{
+		icon: CalendarClock,
+		title: "Smart schedules",
+		description:
+			"Different alarms for weekdays, weekends, travel days — all without juggling toggles.",
+	},
+	{
+		icon: Users,
+		title: "Voices from people you love",
+		description:
+			"Family and friends can send a clip and become tomorrow's alarm — birthdays, big days, ordinary days.",
+	},
+	{
+		icon: Sparkles,
+		title: "Mindful nudges",
+		description:
+			"Reminders to stretch, breathe, drink water — whispered cues, not another buzzing chore list.",
+	},
+	{
+		icon: ShieldCheck,
+		title: "Privacy by default",
+		description:
+			"Personal recordings live on your device. Only clips you choose to share with friends are encrypted and stored in the cloud — nothing else leaves you.",
+	},
+];
+---
+
+<section class="px-4 py-20">
+	<div class="mx-auto max-w-4xl">
+		<div class="mb-12 max-w-2xl space-y-3">
+			<h2
+				class="text-3xl font-bold tracking-tight text-slate-900 sm:text-4xl"
+			>
+				Mornings, the way you actually want them.
+			</h2>
+			<p class="text-lg text-slate-600">
+				Small details that turn the most jarring moment of the day into
+				one you might actually look forward to.
+			</p>
+		</div>
+
+		<ul class="grid gap-10 sm:grid-cols-2 lg:grid-cols-3">
+			{
+				features.map(({ icon: Icon, title, description }) => (
+					<li class="flex flex-col gap-3">
+						<span class="flex h-10 w-10 items-center justify-center rounded-xl bg-slate-900/5 text-slate-900">
+							<Icon class="h-5 w-5" strokeWidth={1.75} />
+						</span>
+						<h3 class="text-base font-medium text-slate-900">
+							{title}
+						</h3>
+						<p class="text-sm leading-relaxed text-slate-600">
+							{description}
+						</p>
+					</li>
+				))
+			}
+		</ul>
+	</div>
+</section>
