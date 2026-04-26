@@ -1,0 +1,67 @@
+---
+import { Plus } from "@lucide/astro";
+
+const faqs = [
+	{
+		question: "Will it ring if my phone is on silent or Do Not Disturb?",
+		answer:
+			"Yes. Voice Alarm uses the iOS alarm system, so it plays at full volume even when your phone is silenced or in Focus mode — just like the built-in Clock app.",
+	},
+	{
+		question: "What happens to recordings when I share them?",
+		answer:
+			"Personal recordings stay on your device. When you send a clip to a friend, that single clip is end-to-end encrypted and delivered through our cloud. We never see the audio, and shared clips expire after the recipient downloads them.",
+	},
+	{
+		question: "Is there a subscription?",
+		answer:
+			"The core alarm experience and your own recordings are free, forever. Voice Alarm Pro adds friend sharing, smart schedules, and unlimited voice library storage for a single yearly fee.",
+	},
+	{
+		question: "Can I use songs or Apple Music tracks?",
+		answer:
+			"You can pair any audio file you own as an alarm — Voice Memos, GarageBand exports, podcast clips. Apple Music streaming isn't supported because Apple's API doesn't allow background playback for alarms.",
+	},
+	{
+		question: "Do I need an account?",
+		answer:
+			"Only if you want to send or receive clips from friends. Everything else — recording, scheduling, waking up — works fully offline with no sign-up.",
+	},
+];
+---
+
+<section class="px-4 py-20">
+	<div class="mx-auto max-w-4xl">
+		<div class="mb-12 max-w-2xl space-y-3">
+			<h2
+				class="text-3xl font-bold tracking-tight text-slate-900 sm:text-4xl"
+			>
+				Questions, answered.
+			</h2>
+			<p class="text-lg text-slate-600">
+				The small print, in plain language.
+			</p>
+		</div>
+
+		<ul class="divide-y divide-slate-900/10 border-y border-slate-900/10">
+			{
+				faqs.map((faq) => (
+					<li>
+						<details class="group">
+							<summary class="flex cursor-pointer list-none items-center justify-between gap-4 py-5 text-left text-base font-medium text-slate-900">
+								<span>{faq.question}</span>
+								<Plus
+									class="h-5 w-5 shrink-0 text-slate-500 transition-transform duration-200 group-open:rotate-45"
+									stroke-width={1.75}
+								/>
+							</summary>
+							<p class="pr-9 pb-5 text-sm leading-relaxed text-slate-600">
+								{faq.answer}
+							</p>
+						</details>
+					</li>
+				))
+			}
+		</ul>
+	</div>
+</section>
