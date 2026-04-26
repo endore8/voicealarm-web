@@ -1,7 +1,6 @@
 // @ts-check
 import { defineConfig, passthroughImageService } from "astro/config";
 
-import react from "@astrojs/react";
 import partytown from "@astrojs/partytown";
 
 import tailwindcss from "@tailwindcss/vite";
@@ -13,7 +12,7 @@ export default defineConfig({
   image: {
     service: passthroughImageService(),
   },
-  integrations: [react(), partytown()],
+  integrations: [partytown()],
   vite: {
     plugins: [tailwindcss()],
   },
