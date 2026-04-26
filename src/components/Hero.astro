@@ -1,0 +1,47 @@
+---
+import { Image } from "astro:assets";
+import AppleIcon from "./icons/AppleIcon.astro";
+import iphoneFrame from "../assets/iphone-frame.png";
+---
+
+<section class="px-4 pt-16 pb-24 sm:pt-24">
+    <div
+        class="mx-auto grid max-w-4xl items-center gap-12 lg:grid-cols-[1fr_auto]"
+    >
+        <div class="space-y-6">
+            <h1
+                class="text-4xl font-bold tracking-tight text-slate-900 sm:text-5xl lg:text-6xl"
+            >
+                Wake up to your own voice.
+            </h1>
+            <p class="text-lg text-slate-600 sm:text-xl">
+                Voice Alarm replaces the same old buzzer with personal voice
+                messages, gentle reminders, and the people who matter most — so
+                every morning starts on your terms.
+            </p>
+            <div class="flex flex-wrap items-center gap-3 pt-2">
+                <a
+                    href="#download"
+                    class="inline-flex items-center gap-2 rounded-full bg-black px-5 py-3 text-sm font-medium text-white transition hover:bg-black/80"
+                >
+                    <AppleIcon class="h-4 w-4" />
+                    Download for iOS
+                </a>
+                <a
+                    href="#features"
+                    class="rounded-full px-5 py-3 text-sm font-medium text-slate-700 transition hover:text-slate-900"
+                >
+                    Learn more →
+                </a>
+            </div>
+        </div>
+
+        <div class="relative flex">
+            <Image
+                src={iphoneFrame}
+                alt="Voice Alarm app screenshot on iPhone 17 Pro"
+                class="w-72 drop-shadow-2xl"
+            />
+        </div>
+    </div>
+</section>
