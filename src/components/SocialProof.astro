@@ -1,0 +1,78 @@
+---
+import { Star } from "@lucide/astro";
+import AppStoreIcon from "./icons/AppStoreIcon.astro";
+
+const reviews = [
+    {
+        title: "Finally, an alarm that doesn't feel hostile",
+        body: "I recorded my own pep talks for Monday mornings. Twelve weeks in and I still don't dread waking up. Whatever they did to the volume curve — keep doing it.",
+        author: "Maya R.",
+        date: "Mar, '26",
+    },
+    {
+        title: "My daughter's voice every morning",
+        body: "She lives across the country and now she's the first thing I hear each day. I cried setting it up. Worth every cent and then some.",
+        author: "Daniel P.",
+        date: "Apr, '26",
+    },
+    {
+        title: "The schedule features just work",
+        body: "Different alarms for weekdays, gym days, travel — set once and forget. I used to babysit four toggles in the stock Clock app. Never again.",
+        author: "Priya S.",
+        date: "Apr, '26",
+    },
+];
+---
+
+<section class="px-4 py-20">
+    <div class="mx-auto max-w-4xl">
+        <div class="mb-12 max-w-2xl space-y-3">
+            <h2
+                class="text-3xl font-bold tracking-tight text-slate-900 sm:text-4xl"
+            >
+                Loved by early risers (and reluctant ones).
+            </h2>
+            <p class="text-lg text-slate-600">
+                A few words from people who decided their mornings deserved
+                better.
+            </p>
+        </div>
+
+        <ul class="grid gap-6 md:grid-cols-3">
+            {
+                reviews.map((review) => (
+                    <li class="flex flex-col gap-4 rounded-2xl border border-white/40 bg-white/60 p-6 shadow-sm backdrop-blur-sm">
+                        <div class="flex items-start justify-between">
+                            <div
+                                class="flex items-center gap-1 text-amber-500"
+                                aria-label="5 out of 5 stars"
+                            >
+                                {Array.from({ length: 5 }).map(() => (
+                                    <Star
+                                        class="h-4 w-4"
+                                        fill="currentColor"
+                                        strokeWidth={0}
+                                    />
+                                ))}
+                            </div>
+                            <AppStoreIcon class="h-5 w-5 text-neutral-600" />
+                        </div>
+                        <h3 class="text-base font-medium text-slate-900">
+                            {review.title}
+                        </h3>
+                        <p class="text-sm leading-relaxed text-slate-600">
+                            {review.body}
+                        </p>
+                        <div class="mt-auto pt-2 text-xs text-slate-500">
+                            <span class="font-medium text-slate-700">
+                                {review.author}
+                            </span>
+                            <span class="mx-1.5">&bull;</span>
+                            <span>{review.date}</span>
+                        </div>
+                    </li>
+                ))
+            }
+        </ul>
+    </div>
+</section>
