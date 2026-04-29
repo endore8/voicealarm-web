@@ -7,8 +7,7 @@ import tailwindcss from "@tailwindcss/vite";
 
 // https://astro.build/config
 export default defineConfig({
-  site: "https://endore8.github.io",
-  base: process.env.GITHUB_ACTIONS ? "/voicealarm-web" : undefined,
+  site: "https://voicealarm.app",
   image: {
     service: passthroughImageService(),
   },
