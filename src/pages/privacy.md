@@ -47,4 +47,4 @@ You can delete your account at any time from inside the app. Deleting your accou
 
 ## Contact
 
-Questions about this policy? Email [privacy@voicealarm.app](mailto:privacy@voicealarm.app).
+Questions about this policy? Email [support@voicealarm.app](mailto:support@voicealarm.app).
