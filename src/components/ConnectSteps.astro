@@ -1,0 +1,109 @@
+---
+import AppleIcon from "./icons/AppleIcon.astro";
+---
+
+<section class="flex grow items-center px-4 py-16">
+    <div
+        class="mx-auto flex w-full max-w-xl flex-col items-center gap-12 text-center"
+    >
+        <h1
+            class="text-3xl font-bold tracking-tight text-slate-900 sm:text-4xl"
+        >
+            Connect with a friend
+        </h1>
+
+        <ol class="grid w-full gap-8 sm:grid-cols-2">
+            <li
+                class="flex flex-col items-center gap-4 rounded-2xl border border-white/40 bg-white/60 p-6 shadow-sm backdrop-blur-sm"
+            >
+                <span
+                    class="flex h-8 w-8 items-center justify-center rounded-full bg-black text-sm font-medium text-white"
+                >
+                    1
+                </span>
+                <h2 class="text-base font-medium text-slate-900">
+                    Download Arka
+                </h2>
+                <p class="text-sm text-slate-600">
+                    Install the app from the App Store on your iPhone.
+                </p>
+                <a
+                    href="https://apps.apple.com/app/apple-store/id6763719175"
+                    class="mt-auto inline-flex items-center gap-2 rounded-full bg-black px-4 py-2 text-sm font-medium text-white transition hover:bg-black/80"
+                >
+                    <AppleIcon class="h-4 w-4" />
+                    Download
+                </a>
+            </li>
+
+            <li
+                class="flex flex-col items-center gap-4 rounded-2xl border border-white/40 bg-white/60 p-6 shadow-sm backdrop-blur-sm"
+            >
+                <span
+                    class="flex h-8 w-8 items-center justify-center rounded-full bg-black text-sm font-medium text-white"
+                >
+                    2
+                </span>
+                <h2 class="text-base font-medium text-slate-900">
+                    Scan this code
+                </h2>
+                <p class="text-sm text-slate-600">
+                    Open the app, sign up and scan the QR below to connect.
+                </p>
+                <canvas
+                    id="connect-qr"
+                    class="mt-auto rounded-lg bg-white p-2 shadow-sm"
+                    aria-label="Connection QR code"></canvas>
+            </li>
+        </ol>
+
+        <p id="connect-error" class="hidden text-sm text-slate-500">
+            This connect link is missing a code. Ask your friend to share their
+            link again.
+        </p>
+    </div>
+</section>
+
+<script>
+    import QRCode from "qrcode";
+
+    const CODE_PATTERN = /^[a-zA-Z0-9]{6}$/;
+
+    function extractCode(): string | null {
+        const params = new URLSearchParams(window.location.search);
+        const queryCode = params.get("code");
+        if (queryCode && CODE_PATTERN.test(queryCode)) {
+            return queryCode.toUpperCase();
+        }
+        const match = window.location.pathname.match(
+            /^\/connect\/([a-zA-Z0-9]{6})\/?$/,
+        );
+        return match ? match[1].toUpperCase() : null;
+    }
+
+    const code = extractCode();
+    const errorEl = document.getElementById("connect-error");
+    const canvasEl = document.getElementById(
+        "connect-qr",
+    ) as HTMLCanvasElement | null;
+
+    if (code && canvasEl) {
+        QRCode.toCanvas(canvasEl, code, {
+            width: 200,
+            margin: 1,
+            color: { dark: "#0f172a", light: "#ffffff" },
+        }).catch(() => {
+            errorEl?.classList.remove("hidden");
+        });
+        // Restore the pretty URL when we arrived via the ?code= fallback
+        if (
+            window.location.pathname === "/connect/" ||
+            window.location.pathname === "/connect"
+        ) {
+            history.replaceState(null, "", `/connect/${code}`);
+        }
+    } else {
+        canvasEl?.classList.add("hidden");
+        errorEl?.classList.remove("hidden");
+    }
+</script>
