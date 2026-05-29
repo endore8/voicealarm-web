@@ -1,16 +1,20 @@
 ---
-import Layout from '../layouts/Layout.astro';
-import Hero from '../components/Hero.astro';
-import Features from '../components/Features.astro';
-import SocialProof from '../components/SocialProof.astro';
-import FAQ from '../components/FAQ.astro';
+import Layout from "../layouts/Layout.astro";
+import Hero from "../components/Hero.astro";
+import Features from "../components/Features.astro";
+import SocialProof from "../components/SocialProof.astro";
+import FAQ from "../components/FAQ.astro";
 ---
 
 <Layout>
-	<main>
-		<Hero />
+    <main class="flex grow flex-col">
+        <Hero />
+        {
+            /*
 		<Features />
 		<SocialProof />
 		<FAQ />
-	</main>
+		*/
+        }
+    </main>
 </Layout>
