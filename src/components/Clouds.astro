@@ -1,13 +1,15 @@
 ---
 // The exported viewBox (78 wide) clips the cloud's right lobe, so it is widened
 // here to 108 — the actual extent of the path.
+// `mobile` marks the three kept below `sm`, chosen for spread: they start at
+// roughly 0vw, 38vw and 89vw across the top 3%–27% of the band.
 const clouds = [
-    { top: "6%", width: 96, opacity: 0.85, duration: "150s", delay: "-12s" },
-    { top: "16%", width: 148, opacity: 0.8, duration: "215s", delay: "-92s" },
-    { top: "3%", width: 68, opacity: 0.8, duration: "180s", delay: "-134s" },
-    { top: "27%", width: 118, opacity: 0.8, duration: "258s", delay: "-46s" },
-    { top: "36%", width: 84, opacity: 0.8, duration: "196s", delay: "-170s" },
-    { top: "9%", width: 104, opacity: 0.8, duration: "172s", delay: "-102s" },
+    { top: "6%", width: 96, opacity: 0.85, duration: "150s", delay: "-12s", mobile: false },
+    { top: "16%", width: 148, opacity: 0.8, duration: "215s", delay: "-92s", mobile: true },
+    { top: "3%", width: 68, opacity: 0.8, duration: "180s", delay: "-134s", mobile: true },
+    { top: "27%", width: 118, opacity: 0.8, duration: "258s", delay: "-46s", mobile: true },
+    { top: "36%", width: 84, opacity: 0.8, duration: "196s", delay: "-170s", mobile: false },
+    { top: "9%", width: 104, opacity: 0.8, duration: "172s", delay: "-102s", mobile: false },
 ];
 ---
 
@@ -18,7 +20,7 @@ const clouds = [
     {
         clouds.map((cloud) => (
             <svg
-                class="cloud absolute"
+                class={`cloud absolute ${cloud.mobile ? "" : "hidden sm:block"}`}
                 style={`top:${cloud.top};width:${cloud.width}px;opacity:${cloud.opacity};animation-duration:${cloud.duration};animation-delay:${cloud.delay};`}
                 viewBox="0 0 108 62"
                 fill="none"
