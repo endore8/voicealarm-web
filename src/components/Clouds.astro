@@ -1,0 +1,59 @@
+---
+// The exported viewBox (78 wide) clips the cloud's right lobe, so it is widened
+// here to 108 — the actual extent of the path.
+const clouds = [
+    { top: "6%", width: 96, opacity: 0.85, duration: "150s", delay: "-12s" },
+    { top: "16%", width: 148, opacity: 0.8, duration: "215s", delay: "-92s" },
+    { top: "3%", width: 68, opacity: 0.8, duration: "180s", delay: "-134s" },
+    { top: "27%", width: 118, opacity: 0.8, duration: "258s", delay: "-46s" },
+    { top: "36%", width: 84, opacity: 0.8, duration: "196s", delay: "-170s" },
+    { top: "9%", width: 104, opacity: 0.8, duration: "172s", delay: "-102s" },
+];
+---
+
+<div
+    class="pointer-events-none absolute inset-x-0 top-0 z-0 h-[40%] overflow-hidden"
+    aria-hidden="true"
+>
+    {
+        clouds.map((cloud) => (
+            <svg
+                class="cloud absolute"
+                style={`top:${cloud.top};width:${cloud.width}px;opacity:${cloud.opacity};animation-duration:${cloud.duration};animation-delay:${cloud.delay};`}
+                viewBox="0 0 108 62"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+            >
+                <path
+                    d="M41 0C47.0821 0 52.3715 6.57515 55.0781 16.2568C57.9887 10.039 62.6921 6 68 6C74.1071 6 79.4139 11.3465 82.1104 19.207C84.8322 17.1981 88.267 16 92 16C100.837 16 108 22.7157 108 31C108 39.2843 100.837 46 92 46C88.2668 46 84.8323 44.8012 82.1104 42.792C79.414 50.653 74.1073 56 68 56C62.6918 56 57.9887 51.9605 55.0781 45.7422C52.3716 55.4244 47.0823 62 41 62C35.0114 62 29.7916 55.6254 27.0488 46.1875C24.1766 49.7881 20.2854 52 16 52C7.16344 52 0 42.598 0 31C0 19.402 7.16344 10 16 10C20.2852 10 24.1767 12.2112 27.0488 15.8115C29.7917 6.37409 35.0116 0 41 0Z"
+                    fill="white"
+                />
+            </svg>
+        ))
+    }
+</div>
+
+<style>
+    .cloud {
+        left: 0;
+        animation-name: drift;
+        animation-timing-function: linear;
+        animation-iteration-count: infinite;
+    }
+
+    @keyframes drift {
+        from {
+            transform: translateX(-30vw);
+        }
+        to {
+            transform: translateX(130vw);
+        }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+        .cloud {
+            animation: none;
+            transform: translateX(30vw);
+        }
+    }
+</style>
