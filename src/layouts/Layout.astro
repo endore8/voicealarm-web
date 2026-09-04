@@ -1,5 +1,12 @@
 ---
 import "../styles/global.css";
+
+const title = "Personal Voice Alarm";
+const description =
+    "Wake up to the voices of the people you love, recorded just for you.";
+// Social scrapers need absolute URLs; `site` in astro.config.mjs supplies the origin.
+const canonical = new URL(Astro.url.pathname, Astro.site);
+const ogImage = new URL("opengraph.png", Astro.site);
 ---
 
 <!doctype html>
@@ -9,7 +16,26 @@ import "../styles/global.css";
         <meta name="viewport" content="width=device-width" />
         <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
         <meta name="generator" content={Astro.generator} />
-        <title>Personal Voice Alarm</title>
+        <title>{title}</title>
+        <meta name="description" content={description} />
+        <link rel="canonical" href={canonical} />
+
+        <meta property="og:type" content="website" />
+        <meta property="og:url" content={canonical} />
+        <meta property="og:title" content={title} />
+        <meta property="og:description" content={description} />
+        <meta property="og:image" content={ogImage} />
+        <meta property="og:image:width" content="1200" />
+        <meta property="og:image:height" content="630" />
+        <meta
+            property="og:image:alt"
+            content="A sleeping character on a yellow sky with clouds"
+        />
+
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content={title} />
+        <meta name="twitter:description" content={description} />
+        <meta name="twitter:image" content={ogImage} />
     </head>
     <body class="flex min-h-screen flex-col bg-[#FFD878]">
         <slot />
