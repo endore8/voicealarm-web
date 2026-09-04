@@ -9,7 +9,7 @@ const SIGNUP_ENDPOINT = `https://app.loops.so/api/newsletter-form/${LOOPS_FORM_I
 <section class="relative z-10 flex grow items-center px-6 py-20">
     <div class="mx-auto max-w-3xl text-center">
         <svg
-            class="mx-auto mb-4 h-32 w-auto overflow-visible sm:h-42"
+            class="mx-auto mb-4 h-32 w-auto sm:h-42"
             width="146"
             height="155"
             viewBox="0 0 146 155"
@@ -20,14 +20,10 @@ const SIGNUP_ENDPOINT = `https://app.loops.so/api/newsletter-form/${LOOPS_FORM_I
             <path d="M42.7175 0.63551C57.5443 2.29006 38.3854 28.5656 14.6062 17.1485C11.4283 15.1975 8.08206 11.4675 10.7033 7.77155C20.3084 2.6598 23.9682 25.8017 42.7175 0.63551Z" fill="#21273B" fill-opacity="0.898039"></path>
             <path d="M94.0706 1.37533C98.0083 2.20896 100.169 8.24268 103.742 10.1394C107.202 11.9786 111.554 12.6009 115.152 10.8249C118.614 9.11707 122.741 4.48589 126.672 6.79758C128.543 9.97956 126.872 12.3793 124.723 14.6344C124.043 15.175 123.23 15.7411 122.509 16.229C117.649 19.496 111.671 20.6492 105.945 19.424C98.8958 17.9733 83.2226 7.8075 94.0706 1.37533Z" fill="#21273B" fill-opacity="0.898039"></path>
             <path
-                class="stretchy"
                 d="M146 80.9914C146 63.8706 113.317 54.2461 73 54.2461C32.6832 54.2461 0 63.8706 0 80.9914C0 98.1122 32.6832 116.246 73 116.246C113.317 116.246 146 98.1122 146 80.9914Z"
-                data-stretch="M146 152.122C146 89.4675 113.317 54.2461 73 54.2461C32.6832 54.2461 0 89.4675 0 152.122C0 214.7764 32.6832 281.1381 73 281.1381C113.317 281.1381 146 214.7764 146 152.122Z"
                 fill="#C85129"></path>
             <path
-                class="stretchy"
                 d="M71.4238 77.2461C104.713 77.2462 131.726 87.2969 132 99.7344C118.648 109.771 96.9355 116.246 72.416 116.246C46.7413 116.246 24.1424 109.389 11 98.2754C13.2575 86.5202 39.4462 77.2461 71.4238 77.2461Z"
-                data-stretch="M71.4238 138.4158C104.713 138.4162 131.726 175.1973 132 220.713C118.648 257.4424 96.9355 281.1381 72.416 281.1381C46.7413 281.1381 24.1424 256.0445 11 215.3737C13.2575 172.3549 39.4462 138.4158 71.4238 138.4158Z"
                 fill="#E97935"></path>
         </svg>
         <h1
@@ -78,131 +74,6 @@ const SIGNUP_ENDPOINT = `https://app.loops.so/api/newsletter-form/${LOOPS_FORM_I
         </div>
     </div>
 </section>
-
-<script>
-    import yawnUrl from "../assets/yawn.mp3";
-
-    // Press and hold anywhere: the character yawns open and holds there until
-    // the press is released, then springs back.
-    const reduced = window.matchMedia("(prefers-reduced-motion: reduce)");
-    const parse = (d: string) => d.match(/-?\d+\.?\d*|[A-Za-z]/g) ?? [];
-
-    const shapes = [...document.querySelectorAll<SVGPathElement>("svg .stretchy")].map(
-        (path) => ({
-            path,
-            rest: parse(path.getAttribute("d") ?? ""),
-            open: parse(path.dataset.stretch ?? ""),
-        }),
-    );
-
-    function draw(t: number) {
-        for (const { path, rest, open } of shapes) {
-            let d = "";
-            for (let i = 0; i < rest.length; i++) {
-                if (/[A-Za-z]/.test(rest[i])) {
-                    d += rest[i];
-                    continue;
-                }
-                const from = +rest[i];
-                const value = from + (+open[i] - from) * t;
-                d += (d && !/[A-Za-z]$/.test(d) ? " " : "") + value.toFixed(3);
-            }
-            path.setAttribute("d", d);
-        }
-    }
-
-    // Spring, so a release part-way through the yawn eases back from wherever it got to.
-    const STIFFNESS = 140;
-    const DAMPING = 14;
-    let position = 0;
-    let velocity = 0;
-    let target = 0;
-    let frame = 0;
-    let last = 0;
-
-    function tick(now: number) {
-        const dt = Math.min((now - last) / 1000, 1 / 30);
-        last = now;
-        velocity += (STIFFNESS * (target - position) - DAMPING * velocity) * dt;
-        position += velocity * dt;
-        draw(position);
-
-        if (Math.abs(target - position) > 0.001 || Math.abs(velocity) > 0.001) {
-            frame = requestAnimationFrame(tick);
-        } else {
-            position = target;
-            velocity = 0;
-            draw(position);
-            frame = 0;
-        }
-    }
-
-    function settleTo(next: number) {
-        if (reduced.matches) return;
-        target = next;
-        if (!frame) {
-            last = performance.now();
-            frame = requestAnimationFrame(tick);
-        }
-    }
-
-    // The clip runs ~3.5s, longer than a typical hold, so it fades out on
-    // release instead of yawning on after the character has snapped shut.
-    const yawn = new Audio(yawnUrl);
-    yawn.preload = "auto";
-    let fade = 0;
-
-    function startYawn() {
-        clearInterval(fade);
-        yawn.volume = 1;
-        yawn.currentTime = 0;
-        yawn.play().catch(() => {});
-    }
-
-    function endYawn() {
-        clearInterval(fade);
-        fade = window.setInterval(() => {
-            yawn.volume = Math.max(0, +(yawn.volume - 0.08).toFixed(2));
-            if (yawn.volume === 0) {
-                clearInterval(fade);
-                yawn.pause();
-            }
-        }, 16);
-    }
-
-    // A yawn tops out at 4s, so an unattended press releases itself.
-    const MAX_HOLD = 4000;
-    let holdTimer = 0;
-
-    function press() {
-        clearTimeout(holdTimer);
-        holdTimer = window.setTimeout(release, MAX_HOLD);
-        settleTo(1);
-        startYawn();
-    }
-
-    function release() {
-        clearTimeout(holdTimer);
-        holdTimer = 0;
-        settleTo(0);
-        endYawn();
-    }
-
-    document.addEventListener("pointerdown", (event) => {
-        // A press on the signup form (or a link) belongs to that control, not
-        // to the character.
-        if (event.target instanceof Element && event.target.closest("form, a")) {
-            return;
-        }
-        press();
-    });
-
-    for (const event of ["pointerup", "pointercancel"]) {
-        document.addEventListener(event, release);
-    }
-
-    window.addEventListener("blur", release);
-</script>
 
 <script>
     // Loops' newsletter-form endpoint accepts a url-encoded POST from the
