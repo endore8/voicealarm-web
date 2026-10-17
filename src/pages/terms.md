@@ -1,14 +1,14 @@
 ---
 layout: ../layouts/MarkdownLayout.astro
 title: Terms of Service
-updated: May 29, 2026
+updated: October 17, 2026
 ---
 
-These Terms of Service ("Terms") govern your use of **Arka: Voice Alarm** (referred to here as "Arka"), the iOS app distributed through the App Store. By downloading or using Arka, you agree to these Terms. If you do not agree, please do not use the app.
+These Terms of Service ("Terms") govern your use of **Alarma**, the iOS app distributed through the App Store. By downloading or using Alarma, you agree to these Terms. If you do not agree, please do not use the app.
 
 ## Subscriptions
 
-Some features of Arka are available only with a paid subscription. You will be billed in advance on a recurring and periodic basis, depending on the plan you choose ("Billing Cycle"). Your subscription will automatically renew under the same conditions unless you cancel it before the end of the current Billing Cycle.
+Some features of Alarma are available only with a paid subscription. You will be billed in advance on a recurring and periodic basis, depending on the plan you choose ("Billing Cycle"). Your subscription will automatically renew under the same conditions unless you cancel it before the end of the current Billing Cycle.
 
 Subscriptions are sold and managed through the App Store. You can manage or cancel your subscription at any time through your Apple ID account settings.
 
@@ -26,39 +26,31 @@ Except when required by law, paid subscription fees are non-refundable. Refund r
 
 ## Your content
 
-Voice clips you record stay on your device. When you choose to share a voice clip with a friend, you grant Arka a limited, non-exclusive licence to store and transmit that clip solely for the purpose of delivering it to the recipient you selected. You retain all rights to your voice clips.
-
-You agree not to use Arka — and in particular the sharing feature — to upload, transmit, or share:
-
-- Content that is illegal, hateful, harassing, threatening, or sexually explicit, especially involving minors.
-- Content that infringes someone else's intellectual property or privacy rights.
-- Recordings made of other people without their consent where consent is legally required.
-
-We may remove shared voice clips and suspend accounts that violate these rules.
+Voice clips you record are stored only on your device and are never uploaded to our servers. You retain all rights to your voice clips, and you are responsible for the recordings you make — including obtaining consent from other people where the law requires it.
 
 ## Intellectual property
 
-Arka and its original content, features, and functionality are and will remain the exclusive property of Arka and its licensors. The app is protected by copyright, trademark, and other laws. Our trademarks and trade dress may not be used in connection with any product or service without our prior written consent.
+Alarma and its original content, features, and functionality are and will remain the exclusive property of Alarma and its licensors. The app is protected by copyright, trademark, and other laws. Our trademarks and trade dress may not be used in connection with any product or service without our prior written consent.
 
 ## Links to other websites
 
-Arka may contain links to third-party websites or services that are not owned or controlled by us. We have no control over, and assume no responsibility for, the content, privacy policies, or practices of any third-party websites or services.
+Alarma may contain links to third-party websites or services that are not owned or controlled by us. We have no control over, and assume no responsibility for, the content, privacy policies, or practices of any third-party websites or services.
 
 ## Termination
 
-We may terminate or suspend your account immediately, without prior notice or liability, for any reason — including if you breach these Terms. Upon termination, your right to use the app will cease immediately. Voice clips stored on your device will not be affected by account termination.
+We may terminate or suspend your access to the app immediately, without prior notice or liability, for any reason — including if you breach these Terms. Upon termination, your right to use the app will cease immediately.
 
 ## Limitation of liability
 
-To the maximum extent permitted by law, Arka and its developers shall not be liable for any indirect, incidental, special, consequential, or punitive damages — including loss of profits, data, use, goodwill, or other intangible losses — resulting from your use of, or inability to use, the app.
+To the maximum extent permitted by law, Alarma and its developers shall not be liable for any indirect, incidental, special, consequential, or punitive damages — including loss of profits, data, use, goodwill, or other intangible losses — resulting from your use of, or inability to use, the app.
 
 ## Disclaimer
 
-Your use of Arka is at your sole risk. The app is provided on an "AS IS" and "AS AVAILABLE" basis, without warranties of any kind, whether express or implied. We do not guarantee that the app will function uninterrupted, securely, or be available at any particular time or location, or that any errors will be corrected.
+Your use of Alarma is at your sole risk. The app is provided on an "AS IS" and "AS AVAILABLE" basis, without warranties of any kind, whether express or implied. We do not guarantee that the app will function uninterrupted, securely, or be available at any particular time or location, or that any errors will be corrected.
 
 ## Changes to these Terms
 
-We reserve the right to modify or replace these Terms at any time. If a change is material, we will provide at least 30 days' notice before the new Terms take effect when reasonably practicable. By continuing to use Arka after revisions become effective, you agree to be bound by the revised Terms.
+We reserve the right to modify or replace these Terms at any time. If a change is material, we will provide at least 30 days' notice before the new Terms take effect when reasonably practicable. By continuing to use Alarma after revisions become effective, you agree to be bound by the revised Terms.
 
 ## Governing law
 
