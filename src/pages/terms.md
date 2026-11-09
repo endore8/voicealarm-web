@@ -58,7 +58,7 @@ We reserve the right to modify or replace these Terms at any time. If a change i
 
 ## Governing law
 
-These Terms are governed by the laws of Ukraine, without regard to its conflict of law provisions.
+These Terms are governed by the laws of Denmark, without regard to its conflict of law provisions. Any dispute will be settled by the Danish courts. If you are a consumer, this does not take away any mandatory protection you have under the laws of the country where you live.
 
 ## Contact
 

@@ -32,6 +32,12 @@ We keep this list short on purpose. Each service below receives only what it nee
 
 Your voice clips live only on your device, so you're always in control. You can delete any clip from inside the app, and deleting Alarma removes all of its data from your iPhone.
 
+## Your rights and governing law
+
+This policy is governed by Danish law, including the EU General Data Protection Regulation (GDPR) and the Danish Data Protection Act. Under these rules you have the right to access, correct, and delete personal data about you, to restrict or object to its processing, and to data portability. To exercise any of these rights, contact us using the details below.
+
+If you believe we have handled your data incorrectly, you can file a complaint with the Danish Data Protection Agency (Datatilsynet) at [datatilsynet.dk](https://www.datatilsynet.dk).
+
 ## Contact
 
 Questions about this policy? Email [support@voicealarm.app](mailto:support@voicealarm.app).
