@@ -1,7 +1,7 @@
 ---
 layout: ../layouts/MarkdownLayout.astro
 title: Privacy Policy
-updated: October 17, 2026
+updated: November 9, 2026
 ---
 
 **Alarma** is built around a simple principle: your voice belongs to you. This page explains what we store, where, and why.
@@ -19,6 +19,8 @@ We keep this list short on purpose. Each service below receives only what it nee
 **TelemetryDeck** — We use TelemetryDeck to understand how the app is used in aggregate — how often features are opened, which screens are visited, that kind of thing. TelemetryDeck is built for privacy: it only receives anonymous, salted signals and never identifies you personally. See the [TelemetryDeck privacy policy](https://telemetrydeck.com/privacy).
 
 **Sentry** — We use Sentry to receive crash reports and error diagnostics so we can fix bugs quickly. Sentry receives technical information about the crash (stack trace, device model, OS version) but nothing about your voice clips. See the [Sentry privacy policy](https://sentry.io/privacy/).
+
+**WinWinKit** — Alarma's affiliate program for creators runs on WinWinKit. If you join the program, the details you provide when applying and receiving payouts are handled by WinWinKit. See the [WinWinKit privacy policy](https://winwinkit.com/privacy/).
 
 ## What we don't do
 

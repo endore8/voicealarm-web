@@ -1,7 +1,7 @@
 ---
 layout: ../layouts/MarkdownLayout.astro
 title: Terms of Service
-updated: October 17, 2026
+updated: November 9, 2026
 ---
 
 These Terms of Service ("Terms") govern your use of **Alarma**, the iOS app distributed through the App Store. By downloading or using Alarma, you agree to these Terms. If you do not agree, please do not use the app.
@@ -23,6 +23,10 @@ We may adjust subscription fees at our discretion. Any change to subscription fe
 ## Refunds
 
 Except when required by law, paid subscription fees are non-refundable. Refund requests for purchases made through the App Store are handled by Apple under their published refund policy.
+
+## Affiliate program
+
+The Alarma affiliate program for creators is run through WinWinKit, a third-party platform. If you join the program, your participation — including your earnings and payouts — is managed through WinWinKit and is also subject to the [WinWinKit Terms of Service](https://winwinkit.com/terms/). We may change, suspend, or end the affiliate program, or remove a creator from it, at any time. Creators must promote Alarma honestly, clearly disclose the partnership where required, and must not misrepresent the app's features.
 
 ## Your content
 
