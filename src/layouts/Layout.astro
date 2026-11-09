@@ -5,11 +5,14 @@ import Footer from "../components/Footer.astro";
 interface Props {
     title?: string;
     description?: string;
+    /** Keep the page out of search engines (for unlisted pages). */
+    noindex?: boolean;
 }
 
 const {
     title = "Personal Voice Alarm",
     description = "Wake up to the voices of the people you love, recorded just for you.",
+    noindex = false,
 } = Astro.props;
 // Social scrapers need absolute URLs; `site` in astro.config.mjs supplies the origin.
 const canonical = new URL(Astro.url.pathname, Astro.site);
@@ -22,6 +25,7 @@ const ogImage = new URL("opengraph.png", Astro.site);
         <meta charset="UTF-8" />
         <meta name="viewport" content="width=device-width" />
         <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+        {noindex && <meta name="robots" content="noindex, nofollow" />}
         <meta name="generator" content={Astro.generator} />
         <title>{title}</title>
         <meta name="description" content={description} />

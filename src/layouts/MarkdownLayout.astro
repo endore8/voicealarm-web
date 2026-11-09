@@ -6,13 +6,19 @@ interface Props {
 	frontmatter: {
 		title: string;
 		updated?: string;
+		description?: string;
+		noindex?: boolean;
 	};
 }
 
 const { frontmatter } = Astro.props;
 ---
 
-<Layout>
+<Layout
+	title={`${frontmatter.title} · Alarma`}
+	description={frontmatter.description}
+	noindex={frontmatter.noindex}
+>
 	<SiteHeader />
 	<article
 		class="mx-auto w-full max-w-[calc(56rem+3rem)] px-6 pt-16 pb-24 text-slate-700
@@ -21,6 +27,7 @@ const { frontmatter } = Astro.props;
 			[&_p]:my-4 [&_p]:leading-relaxed
 			[&_a]:text-slate-900 [&_a]:underline [&_a:hover]:text-slate-700
 			[&_ul]:my-4 [&_ul]:list-disc [&_ul]:pl-6 [&_ul]:space-y-2
+			[&_ol]:my-4 [&_ol]:list-decimal [&_ol]:pl-6 [&_ol]:space-y-2
 			[&_strong]:text-slate-900 [&_strong]:font-medium"
 	>
 		<h1>{frontmatter.title}</h1>
