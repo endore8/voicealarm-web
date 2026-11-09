@@ -2,9 +2,15 @@
 import "../styles/global.css";
 import Footer from "../components/Footer.astro";
 
-const title = "Personal Voice Alarm";
-const description =
-    "Wake up to the voices of the people you love, recorded just for you.";
+interface Props {
+    title?: string;
+    description?: string;
+}
+
+const {
+    title = "Personal Voice Alarm",
+    description = "Wake up to the voices of the people you love, recorded just for you.",
+} = Astro.props;
 // Social scrapers need absolute URLs; `site` in astro.config.mjs supplies the origin.
 const canonical = new URL(Astro.url.pathname, Astro.site);
 const ogImage = new URL("opengraph.png", Astro.site);

@@ -1,0 +1,85 @@
+---
+import { ArrowRight, Share2, Star, Wallet } from "@lucide/astro";
+import Layout from "../layouts/Layout.astro";
+import SiteHeader from "../components/SiteHeader.astro";
+import Clouds from "../components/Clouds.astro";
+
+const APPLY_URL = "https://alarma.wwk.link/apply/default";
+
+const steps = [
+    {
+        icon: Star,
+        title: "Apply",
+        text: "Join the affiliate program and get your personal referral code.",
+    },
+    {
+        icon: Share2,
+        title: "Share",
+        text: "Show your audience how they can use the app.",
+    },
+    {
+        icon: Wallet,
+        title: "Get paid",
+        text: "Get 50% of the profit from the users you refer to Alarma.",
+    },
+];
+---
+
+<Layout
+    title="For Creators · Alarma"
+    description="Join the Alarma affiliate program and earn 50% of profit from the people you refer."
+>
+    <main class="relative flex grow flex-col">
+        <Clouds />
+        <SiteHeader />
+
+        <section class="relative z-10 flex grow items-center px-6 py-20">
+            <div class="mx-auto w-full max-w-4xl">
+                <div class="max-w-2xl">
+                    <p
+                        class="text-sm font-medium tracking-[0.18em] text-stone-900/60 uppercase"
+                    >
+                        For Creators
+                    </p>
+                    <h1
+                        class="mt-4 text-5xl font-semibold tracking-tight text-balance text-stone-900 sm:text-6xl"
+                    >
+                        Earn 50% of profit
+                    </h1>
+                    <p class="mt-6 text-xl text-balance text-stone-700 sm:text-2xl">
+                        Share Alarma with your audience and get half of the profit
+                        from everyone you bring.
+                    </p>
+
+                    <a
+                        href={APPLY_URL}
+                        class="group mt-10 inline-flex items-center gap-2 rounded-full bg-stone-900 px-6 py-3.5 text-base font-medium text-white transition hover:bg-stone-900/80"
+                    >
+                        Apply now
+                        <ArrowRight
+                            size={18}
+                            stroke-width={2}
+                            class="transition group-hover:translate-x-0.5"
+                        />
+                    </a>
+                </div>
+
+                <ol class="mt-16 grid gap-6 sm:grid-cols-3">
+                    {
+                        steps.map(({ icon: Icon, title, text }) => (
+                            <li>
+                                <span class="flex size-12 items-center justify-center rounded-2xl bg-stone-900/10 text-stone-900">
+                                    <Icon size={24} stroke-width={2} />
+                                </span>
+                                <h2 class="mt-5 text-xl font-medium text-stone-900">
+                                    {title}
+                                </h2>
+                                <p class="mt-2 text-stone-600">{text}</p>
+                            </li>
+                        ))
+                    }
+                </ol>
+            </div>
+        </section>
+    </main>
+</Layout>

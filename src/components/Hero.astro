@@ -1,5 +1,5 @@
 ---
-import { Download, Mic, AlarmClock } from "@lucide/astro";
+import { Download, Mic, AlarmClock, ArrowRight } from "@lucide/astro";
 import IPhoneFrame from "./IPhoneFrame.astro";
 import Logo from "../assets/logo.svg";
 
@@ -58,6 +58,23 @@ const bullets = [
                     })
                 }
             </ul>
+
+            <p
+                class="mt-12 text-sm font-medium tracking-[0.18em] text-stone-900/60 uppercase"
+            >
+                For Creators
+            </p>
+            <a
+                href="/creators"
+                class="group mt-0.5 inline-flex items-center gap-2 text-base text-stone-600 transition hover:text-stone-900"
+            >
+                Earn 50% of profit with our affiliate program
+                <ArrowRight
+                    size={18}
+                    stroke-width={2}
+                    class="transition group-hover:translate-x-0.5"
+                />
+            </a>
         </div>
 
         <IPhoneFrame class="mx-auto w-72 sm:w-80">
