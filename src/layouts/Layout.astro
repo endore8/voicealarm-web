@@ -1,5 +1,6 @@
 ---
 import "../styles/global.css";
+import Footer from "../components/Footer.astro";
 
 const title = "Personal Voice Alarm";
 const description =
@@ -37,7 +38,8 @@ const ogImage = new URL("opengraph.png", Astro.site);
         <meta name="twitter:description" content={description} />
         <meta name="twitter:image" content={ogImage} />
     </head>
-    <body class="flex min-h-screen flex-col bg-[#FFD878]">
+    <body class="flex min-h-screen flex-col bg-[#F5F5F5]">
         <slot />
+        <Footer />
     </body>
 </html>

@@ -1,0 +1,36 @@
+---
+// CSS-drawn iPhone 17 Pro frame (screen 1206×2622, ~19.5:9). Pass a screenshot
+// through the default slot; without one, an empty screen is shown.
+interface Props {
+    class?: string;
+}
+
+const { class: className = "" } = Astro.props;
+---
+
+<div class={`relative ${className}`} aria-hidden={Astro.slots.has("default") ? undefined : "true"}>
+    <!-- Side buttons: action + volume on the left, power + camera control on the right -->
+    <span class="absolute top-[17%] -left-[3px] h-[4.5%] w-[3px] rounded-l-sm bg-stone-700"></span>
+    <span class="absolute top-[24%] -left-[3px] h-[8%] w-[3px] rounded-l-sm bg-stone-700"></span>
+    <span class="absolute top-[34%] -left-[3px] h-[8%] w-[3px] rounded-l-sm bg-stone-700"></span>
+    <span class="absolute top-[28%] -right-[3px] h-[12%] w-[3px] rounded-r-sm bg-stone-700"></span>
+    <span class="absolute top-[58%] -right-[3px] h-[7%] w-[3px] rounded-r-sm bg-stone-700"></span>
+
+    <!-- Body: aluminium rim around a thin black bezel -->
+    <div
+        class="relative rounded-[3.25rem] bg-linear-to-br from-stone-500 via-stone-700 to-stone-500 p-[3px] shadow-2xl shadow-stone-900/30"
+    >
+        <div class="rounded-[3.1rem] bg-black p-[10px]">
+            <div
+                class="relative aspect-[1206/2622] overflow-hidden rounded-[2.5rem] bg-stone-950"
+            >
+                <slot />
+                <!-- Dynamic Island -->
+                <div
+                    class="absolute top-[1.6%] left-1/2 h-[3.9%] w-[31%] -translate-x-1/2 rounded-full bg-black"
+                >
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
