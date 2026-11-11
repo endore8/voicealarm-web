@@ -1,0 +1,290 @@
+---
+import {
+    CircleFadingPlus,
+    GalleryHorizontalEnd,
+    UserRound,
+    Video,
+} from "@lucide/astro";
+import Layout from "../../layouts/Layout.astro";
+import SiteHeader from "../../components/SiteHeader.astro";
+import Clouds from "../../components/Clouds.astro";
+
+const channels = [
+    {
+        icon: UserRound,
+        title: "In your bio",
+        text: "Put your referral link or code at the top of your link in bio, as a clear card rather than a line of text further down.",
+    },
+    {
+        icon: Video,
+        title: "In your videos",
+        text: "Say your code out loud in the voiceover, show it on screen, and repeat it in the caption.",
+    },
+    {
+        icon: CircleFadingPlus,
+        title: "On IG Stories",
+        text: "Add a link sticker and write your code out as text too, so people who screenshot can still find it.",
+    },
+    {
+        icon: GalleryHorizontalEnd,
+        title: "In carousel posts",
+        text: "Put your code on the last slide and in the caption, so it's there when people finish swiping.",
+    },
+];
+
+const tips = [
+    {
+        title: "Make your CTA findable in more than one place",
+        text: "A caption mention is great, but captions scroll by fast. Repeating your link or code in your bio too means people can always find their way back to it.",
+    },
+    {
+        title: "Make your bio the star",
+        text: "The clearer and more prominent your Alarma link or code is — a real branded card up top, not a plain line of text buried lower down — the easier it is for people to actually use it.",
+    },
+    {
+        title: "Quality over quantity",
+        text: "A clean, simple path converts better than sheer volume. How often you post or DM matters less than making sure the path you're sending people down — link in bio, automation flow — is smooth and easy to follow.",
+    },
+];
+
+const ideas = [
+    {
+        emoji: "📷",
+        title: "Carousel graphic",
+        text: "A personal “how I got here” tied to your own mornings — how you used to wake up, and how you're now waking up with Alarma.",
+        url: "https://www.instagram.com/p/Da0vXl7j9t_/",
+        linkText: "Mya Miller's post",
+        example:
+            " — shares her personal history with running before revealing she's now a Runna ambassador (different app, same vibe we're going for).",
+    },
+    {
+        emoji: "⭐️",
+        title: "Talk-to-camera",
+        text: "A casual, straight-to-camera share about discovering the app and why it's stuck with you / how it's helping you.",
+        url: "https://www.instagram.com/reel/DGzElLNSFng/",
+        linkText: "Reneé Noe's reel",
+        example:
+            " — talks directly to camera about her partnership with Runna, casual and unscripted.",
+    },
+    {
+        emoji: "☀️",
+        title: "Morning vlog",
+        text: "A “wake up with me” or “my morning routine” style video highlighting how you use Alarma.",
+        url: "https://www.instagram.com/reel/DYprKXOxt8F/",
+        linkText: "Bre Socker's reel",
+        example:
+            " — casually takes her viewers along on a run and shares about her affiliation.",
+    },
+];
+---
+
+<Layout
+    title="The Creator Playbook · Alarma"
+    description="How to promote Alarma and earn 50% of the profit from every user you refer."
+    noindex
+>
+    <main class="relative flex grow flex-col">
+        <Clouds />
+        <SiteHeader />
+
+        <div
+            class="relative z-10 mx-auto w-full max-w-[calc(56rem+3rem)] px-6 pt-16 pb-24"
+        >
+            <header class="max-w-2xl">
+                <p
+                    class="text-sm font-medium tracking-[0.18em] text-stone-900/60 uppercase"
+                >
+                    Alarma Affiliate Program
+                </p>
+                <h1
+                    class="mt-4 text-5xl font-medium tracking-tight text-balance text-stone-900 sm:text-6xl"
+                >
+                    The Creator Playbook
+                </h1>
+            </header>
+
+            <div
+                class="mt-12 flex flex-col gap-4 rounded-3xl bg-stone-900 p-8 text-white sm:flex-row sm:items-start sm:gap-8 sm:p-10"
+            >
+                <p class="text-7xl leading-none font-medium tracking-tight sm:text-8xl">50%</p>
+                <div>
+                    <p class="text-2xl font-medium text-balance">
+                        of the profit from every user you refer is yours.
+                    </p>
+                    <p class="mt-2 text-white/70">
+                        We're in this together — every person you bring to Alarma
+                        grows what you earn, with no cap on how far you can go.
+                    </p>
+                    <p class="mt-1 text-white/70">
+                        Tracked and paid out through your <a href="https://winwinkit.com" target="_blank" rel="noopener noreferrer" class="underline hover:text-white">WinWinKit</a> dashboard.
+                    </p>
+                </div>
+            </div>
+
+            <section class="mt-16">
+                <h2 class="text-2xl font-medium text-stone-900">About Alarma</h2>
+                <div class="mt-4 space-y-4 text-lg leading-relaxed text-stone-700">
+                    <p>
+                        <strong class="font-medium text-stone-900">
+                            Alarma lets you wake up to the voices of the people
+                            you love instead of a beep.
+                        </strong>
+                        Record a voice — a partner, a parent, a kid, a friend, or
+                        yourself — and set it as your alarm. Everything stays on
+                        the iPhone, with no account and no sign-in.
+                    </p>
+                    <p>
+                        Your referral link and code, assets, and payouts all live
+                        in your <a href="https://winwinkit.com" target="_blank" rel="noopener noreferrer" class="text-stone-900 underline hover:text-stone-700">WinWinKit</a> dashboard.
+                    </p>
+                </div>
+            </section>
+
+            <section class="mt-16">
+                <h2 class="text-2xl font-medium text-stone-900">
+                    Common ways to share your referral code
+                </h2>
+                <ul class="mt-6 grid gap-4 sm:grid-cols-2">
+                    {
+                        channels.map(({ icon: Icon, title, text }) => (
+                            <li class="rounded-3xl bg-white p-6">
+                                <span class="flex size-12 items-center justify-center rounded-2xl bg-stone-900/10 text-stone-900">
+                                    <Icon size={24} stroke-width={2} />
+                                </span>
+                                <h3 class="mt-5 text-xl font-medium text-stone-900">
+                                    {title}
+                                </h3>
+                                <p class="mt-2 text-stone-600">{text}</p>
+                            </li>
+                        ))
+                    }
+                </ul>
+            </section>
+
+            <section class="mt-16">
+                <h2 class="text-2xl font-medium text-stone-900">
+                    Introduce yourself as Alarma ambassador
+                </h2>
+
+                <h3 class="mt-8 text-xl font-medium text-stone-900">
+                    Start with a personal post
+                </h3>
+                <div class="mt-3 space-y-4 text-lg leading-relaxed text-stone-700">
+                    <p>
+                        A great first post introduces Alarma in your own words —
+                        whose voice you'd love to wake up to, and why your audience
+                        might want to try it too.
+                    </p>
+                    <p>
+                        It warms your audience up to Alarma, makes your later posts
+                        feel natural, and helps you earn more commission!
+                    </p>
+                </div>
+
+                <h3 class="mt-10 text-xl font-medium text-stone-900">
+                    A few examples & ideas for inspo
+                </h3>
+                <p class="mt-2 text-stone-600 italic">
+                    Pick one, mix them, or do your own thing!
+                </p>
+                <ul class="mt-6 grid gap-4 sm:grid-cols-3">
+                    {
+                        ideas.map(({ emoji, title, text, url, linkText, example }) => (
+                            <li class="flex flex-col rounded-3xl bg-white p-6">
+                                <span class="text-3xl" aria-hidden="true">
+                                    {emoji}
+                                </span>
+                                <h4 class="mt-4 text-lg font-medium text-stone-900">
+                                    {title}
+                                </h4>
+                                <p class="mt-2 text-stone-600">{text}</p>
+                                <p class="mt-4 border-t border-stone-900/10 pt-4 text-sm text-stone-500">
+                                    <span class="font-medium text-stone-700">
+                                        Inspiration:
+                                    </span>{" "}
+                                    <a
+                                        href={url}
+                                        target="_blank"
+                                        rel="noopener noreferrer"
+                                        class="text-stone-900 underline hover:text-stone-700"
+                                    >{linkText}</a>
+                                    {example}
+                                </p>
+                            </li>
+                        ))
+                    }
+                </ul>
+                <p class="mt-4 text-sm text-stone-500 italic">
+                    These examples are from a different app's ambassador program
+                    (Runna) — they're there for tone and format inspiration, not
+                    content to copy directly.
+                </p>
+
+                <h3 class="mt-10 text-xl font-medium text-stone-900">
+                    What happens next
+                </h3>
+                <ul class="mt-4 list-disc space-y-2 pl-6 text-lg leading-relaxed text-stone-700">
+                    <li>
+                        We'd love for you to make your first post mentioning us
+                        <strong class="font-medium text-stone-900">
+                            within 2 weeks of joining our Affiliate Program
+                        </strong>
+                        <ul class="mt-2 list-[circle] space-y-2 pl-6">
+                            <li>
+                                Make sure to mention your code and tag us
+                                @voicealarm.app
+                            </li>
+                        </ul>
+                    </li>
+                    <li>
+                        After that, it's up to you — create as much content as you
+                        like, and promote Alarma in whatever ways feel natural and
+                        compelling to you and your audience.
+                    </li>
+                    <li>
+                        We'll keep the inspiration coming so you can keep growing
+                        your affiliate and earning more!
+                    </li>
+                </ul>
+            </section>
+
+            <section class="mt-16">
+                <h2 class="text-2xl font-medium text-stone-900">Tips</h2>
+                <ol class="mt-6 space-y-8">
+                    {
+                        tips.map(({ title, text }, i) => (
+                            <li class="flex gap-5">
+                                <span class="flex size-10 shrink-0 items-center justify-center rounded-full bg-stone-900 text-base font-medium text-white">
+                                    {i + 1}
+                                </span>
+                                <div>
+                                    <h3 class="text-xl font-medium text-stone-900">
+                                        {title}
+                                    </h3>
+                                    <p class="mt-2 leading-relaxed text-stone-600">
+                                        {text}
+                                    </p>
+                                </div>
+                            </li>
+                        ))
+                    }
+                </ol>
+            </section>
+
+            <p
+                class="mt-16 text-2xl font-medium text-stone-900"
+            >
+                We can't wait to see what you create! 🫶
+            </p>
+
+            <p class="mt-6 text-stone-600">
+                Questions? Email us at
+                <a
+                    href="mailto:marketing@voicealarm.app"
+                    class="text-stone-900 underline hover:text-stone-700"
+                    >marketing@voicealarm.app</a
+                >.
+            </p>
+        </div>
+    </main>
+</Layout>
