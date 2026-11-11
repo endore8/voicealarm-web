@@ -1,11 +1,11 @@
 ---
 layout: ../../layouts/MarkdownLayout.astro
-title: Creator Guide
+title: Creator Playbook
 description: How to promote Alarma as an approved affiliate.
 noindex: true
 ---
 
-Welcome to the Alarma affiliate program — we're glad you're here. This guide covers what Alarma is, how to talk about it, and a few ideas that tend to work well. Use it as a starting point and make it your own: your audience knows your voice best.
+Welcome to the Alarma affiliate program — we're glad you're here. This playbook covers what Alarma is, how to talk about it, and a few ideas that tend to work well. Use it as a starting point and make it your own: your audience knows your voice best.
 
 ## Powered by WinWinKit
 
